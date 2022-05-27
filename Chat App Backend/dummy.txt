@@ -1,0 +1,25 @@
+const UserValidation = Joi.object({
+  name: Joi.string().trim().min(3).max(30).required().messages({
+    "string.base": `User Name should be a type of 'text'`,
+    "string.empty": `User Name cannot be an empty field`,
+    "string.min": `User Name should have a minimum length of {3}`,
+    "any.required": `User Name is a required field`,
+  }),
+  email: Joi.string().email().trim().required().messages({
+    "string.base": `User Email should be a type of 'text'`,
+    "string.empty": `User Email cannot be an empty field`,
+    "any.required": `User Email is a required field`,
+  }),
+  password: Joi.string().pattern(new RegExp("^[a-zA-Z0-9]{3,30}$")).required(),
+  confirmPassword: Joi.ref("password"),
+  avatar: Joi.string(),
+  verified: Joi.boolean().default(false),
+  role: Joi.string().default("user"),
+  status: Joi.string().default("Active"),
+  userIp: Joi.string().default("0.0.0.0"),
+  userLocation: Joi.string().default("Some Location"),
+});
+const { error } = UserValidation.validate(req.body);
+if (error) {
+  return next(error);
+}

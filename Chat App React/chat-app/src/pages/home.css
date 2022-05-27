@@ -1,0 +1,10 @@
+.home__bg {
+  background-image: url(https://images.unsplash.com/photo-1651868722939-61ed67817328?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hhdGluZ3xlbnwwfDF8MHx8&auto=format&fit=crop&w=800);
+  height: 91vh;
+  background-position: center;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  overflow: hidden;
+}
